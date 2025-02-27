@@ -1,7 +1,7 @@
-package org.example.jobrest;
+package org.example.jobrestjpa;
 
-import org.example.jobrest.Service.JobService;
-import org.example.jobrest.model.JobPost;
+import org.example.jobrestjpa.Service.JobService;
+import org.example.jobrestjpa.model.JobPost;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,9 +14,15 @@ public class JobRestController {
     @Autowired
     private JobService jobService;
 
-    @GetMapping(path = "jobPosts", produces = {"application/json"})
+    @GetMapping(path = "jobPosts")
     public List<JobPost> getAllJobs() {
+
         return jobService.getAllJobs();
+    }
+    @GetMapping("jobPosts/keyword/{keyword}")
+    public List<JobPost>search(@PathVariable("keyword") String keyword)
+    {
+        return jobService.search(keyword);
     }
 
     @PutMapping("jobPost")
@@ -40,5 +46,11 @@ public class JobRestController {
     @GetMapping("jobPost/{postId}")
     public JobPost getJob(@PathVariable("postId") int postId) {
         return jobService.getJob(postId);
+    }
+
+    @GetMapping("load")
+    public String loadJobs() {
+        jobService.load();
+        return "Jobs loaded";
     }
 }

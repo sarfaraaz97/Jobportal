@@ -1,10 +1,10 @@
-package org.example.jobrest;
+package org.example.jobrestjpa;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JobRestApplicationTests {
+class JobRestJpaApplicationTests {
 
     @Test
     void contextLoads() {

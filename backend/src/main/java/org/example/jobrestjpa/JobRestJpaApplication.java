@@ -1,13 +1,13 @@
-package org.example.jobrest;
+package org.example.jobrestjpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JobRestApplication {
+public class JobRestJpaApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(JobRestApplication.class, args);
+        SpringApplication.run(JobRestJpaApplication.class, args);
     }
 
 }

@@ -1,16 +1,21 @@
-package org.example.jobrest.Repo;
+package org.example.jobrestjpa.Repo;
 
-import org.example.jobrest.model.JobPost;
+import org.example.jobrestjpa.model.JobPost;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Iterator;
+import java.util.List;
 
 @Repository
-public class JobRepository {
-    List<JobPost> jobs = new ArrayList<>(Arrays.asList(
+public interface JobRepository extends JpaRepository<JobPost, Integer> {
+    List<JobPost>findByPostProfileContainingOrPostDescContaining(String PostProfile, String PostDesc);
+
+
+}
+    /*List<JobPost> jobs = new ArrayList<>(Arrays.asList(
             new JobPost(1, "Java Developer", "Must have good experience in core Java and advanced Java", 2,
                     List.of("Core Java", "J2EE", "Spring Boot", "Hibernate")),
 
@@ -64,5 +69,4 @@ public class JobRepository {
                 return;
             }
         }
-    }
-}
+    }*/

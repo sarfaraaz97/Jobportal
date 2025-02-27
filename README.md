@@ -71,17 +71,11 @@ src/
    git clone https://github.com/your-repo/job-management-app.git
    cd job-management-app/backend
    ```
-2. Configure database connection in `application.properties`:
-   ```properties
-   spring.datasource.url=jdbc:postgresql://localhost:5432/jobdb
-   spring.datasource.username=your_db_user
-   spring.datasource.password=your_db_password
-   ```
-3. Build and run the application:
+2. Build and run the application:
    ```sh
    mvn spring-boot:run
    ```
-4. The backend will be running at `http://localhost:8080`.
+3. The backend will be running at `http://localhost:8080`.
 
 ### Frontend (React)
 1. Navigate to the frontend directory:

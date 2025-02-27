@@ -118,7 +118,8 @@ const Edit = () => {
     setIsSubmitting(true)
 
     try {
-      await axios.post("http://localhost:8080/jobPost", form)
+      // Use PUT method for updating job posts
+      await axios.put("http://localhost:8080/jobPost", form)
       setSnackbar({
         open: true,
         message: "Job posting updated successfully!",
@@ -333,4 +334,3 @@ const Edit = () => {
 }
 
 export default Edit
-
